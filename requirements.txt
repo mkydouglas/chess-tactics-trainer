@@ -1,0 +1,7 @@
+fastapi>=0.115,<1
+uvicorn[standard]>=0.30,<1
+python-multipart>=0.0.9
+Pillow>=10.0
+pymupdf>=1.24
+python-chess>=1.999
+chesstal @ git+https://github.com/tuliovianna-lab/chesstal.git

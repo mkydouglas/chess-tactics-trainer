@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chess Position Scanner</title><link rel="stylesheet" href="/static/style.css?v=3">
+</head>
+<body>
+<main>
+  <header><h1>Chess Position Scanner</h1><p>Upload a board image, review the position, then save it.</p></header>
+  <section class="panel">
+    <form id="upload-form">
+      <label for="file">Board image or PDF</label>
+      <input id="file" name="file" type="file" accept=".pdf,.png,.jpg,.jpeg" required>
+      <label for="top-left">Top-left square in the image</label>
+      <select id="top-left" name="top_left">
+        <option value="a1" selected>a1 (ranks reversed)</option>
+        <option value="a8">a8 (standard)</option>
+        <option value="h1">h1 (board rotated 180°)</option>
+      </select>
+      <button>Analyze file</button>
+    </form>
+    <p id="status" role="status">Recognition is experimental. You can set up or correct the position on the board.</p>
+  </section>
+  <section class="workspace">
+    <div><div id="board" aria-label="Interactive chessboard"></div><div class="controls"><button id="flip">Flip board</button><button id="clear">Clear board</button><button id="start">Starting position</button></div></div>
+    <aside class="panel"><h2>Position editor</h2><p>Choose a piece, then click a square to place it. Select an occupied square and choose “Remove”. Drag pieces to move them.</p>
+      <div id="palette"></div><button id="remove" class="secondary">Remove piece</button><button id="save">Save position</button>
+      <h2>Saved positions</h2><ul id="positions"></ul>
+    </aside>
+  </section>
+</main><script src="/static/app.js?v=3"></script>
+</body></html>
